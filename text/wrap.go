@@ -9,12 +9,15 @@ import (
 
 var runCondition = runewidth.NewCondition()
 
-// WrapHard wraps a string to the given length using a newline. Handles strings
+// WrapHard wraps a string to the given length using a newline. Handles string
 // with ANSI escape sequences (such as text color) without breaking the text
 // formatting. Breaks all words that go beyond the line boundary.
 //
 // For examples, refer to the unit-tests or GoDoc examples.
 func WrapHard(str string, wrapLen int) string {
+	if str == "\u001B[33mab\ncd\n\u001B[0m" {
+		println()
+	}
 	if wrapLen <= 0 {
 		return ""
 	}
@@ -109,7 +112,6 @@ func appendChar(char rune, wrapLen int, lineLen *int, inEscSeq bool, lastSeenEsc
 		// increment the line index if not in the middle of an escape sequence
 		*lineLen += runCondition.RuneWidth(char)
 	}
-	println(out.String(), "\t\t", string([]rune{char}), *lineLen)
 	if (*lineLen > wrapLen && !inEscSeq && char != '\n') || (char == '\n') {
 		if lastSeenEscSeq != "" {
 			// terminate escape sequence and the line; and restart the escape
