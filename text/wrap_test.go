@@ -47,6 +47,7 @@ func TestWrapHard(t *testing.T) {
 	assert.Equal(t, "\x1b[33mJon\x1b[0m\n\x1b[33mSno\x1b[0m\n\x1b[33mw\x1b[0m", WrapHard("\x1b[33mJon Snow\x1b[0m", 3))
 	assert.Equal(t, "\x1b[33mJon\x1b[0m\n\x1b[33mSno\x1b[0m\n\x1b[33mw\x1b[0m", WrapHard("\x1b[33mJon Snow\n", 3))
 	assert.Equal(t, "\x1b[33mJon\x1b[0m\n\x1b[33mSno\x1b[0m\n\x1b[33mw \x1b[0m", WrapHard("\x1b[33mJon Snow\n\x1b[0m", 3))
+	assert.Equal(t, "\x1b[33m伊\x1b[0m\n\x1b[33m耿\x1b[0m\n\x1b[33m·\x1b[0m\n\x1b[33m塔\x1b[0m\n\x1b[33m格\x1b[0m\n\x1b[33m利\x1b[0m\n\x1b[33m安 \x1b[0m", WrapHard("\x1b[33m伊耿·塔格利安\n\x1b[0m", 3))
 
 	complexIn := "+---+------+-------+------+\n| 1 | Arya | Stark | 3000 |\n+---+------+-------+------+"
 	assert.Equal(t, complexIn, WrapHard(complexIn, 27))

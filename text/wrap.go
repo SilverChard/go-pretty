@@ -3,14 +3,21 @@ package text
 import (
 	"strings"
 	"unicode/utf8"
+
+	"github.com/mattn/go-runewidth"
 )
 
-// WrapHard wraps a string to the given length using a newline. Handles strings
+var runCondition = runewidth.NewCondition()
+
+// WrapHard wraps a string to the given length using a newline. Handles string
 // with ANSI escape sequences (such as text color) without breaking the text
 // formatting. Breaks all words that go beyond the line boundary.
 //
 // For examples, refer to the unit-tests or GoDoc examples.
 func WrapHard(str string, wrapLen int) string {
+	if str == "\u001B[33mab\ncd\n\u001B[0m" {
+		println()
+	}
 	if wrapLen <= 0 {
 		return ""
 	}
@@ -101,7 +108,11 @@ func WrapText(str string, wrapLen int) string {
 func appendChar(char rune, wrapLen int, lineLen *int, inEscSeq bool, lastSeenEscSeq string, out *strings.Builder) {
 	// handle reaching the end of the line as dictated by wrapLen or by finding
 	// a newline character
-	if (*lineLen == wrapLen && !inEscSeq && char != '\n') || (char == '\n') {
+	if !inEscSeq {
+		// increment the line index if not in the middle of an escape sequence
+		*lineLen += runCondition.RuneWidth(char)
+	}
+	if (*lineLen > wrapLen && !inEscSeq && char != '\n') || (char == '\n') {
 		if lastSeenEscSeq != "" {
 			// terminate escape sequence and the line; and restart the escape
 			// sequence in the next line
@@ -112,18 +123,13 @@ func appendChar(char rune, wrapLen int, lineLen *int, inEscSeq bool, lastSeenEsc
 			// just start a new line
 			out.WriteRune('\n')
 		}
-		// reset line index to 0th character
-		*lineLen = 0
+		// reset line index to character width
+		*lineLen = runCondition.RuneWidth(char)
 	}
 
 	// if the rune is not a new line, output it
 	if char != '\n' {
 		out.WriteRune(char)
-
-		// increment the line index if not in the middle of an escape sequence
-		if !inEscSeq {
-			*lineLen++
-		}
 	}
 }
 
