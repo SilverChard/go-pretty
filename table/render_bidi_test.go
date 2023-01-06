@@ -3,7 +3,7 @@ package table
 import (
 	"testing"
 
-	"github.com/jedib0t/go-pretty/v6/text"
+	"github.com/SilverChard/go-pretty/v6/text"
 )
 
 func TestTable_Render_BiDiText(t *testing.T) {
@@ -15,7 +15,7 @@ func TestTable_Render_BiDiText(t *testing.T) {
 	table.AppendFooter(Row{"סהכ", 30})
 	table.SetAutoIndex(true)
 
-	//table.Style().Format.Direction = text.Default
+	// table.Style().Format.Direction = text.Default
 	compareOutput(t, table.Render(), `
 +---+------------+------+--------+-----------+
 |   | תאריך      | סכום | מחלקה  | תגים      |
