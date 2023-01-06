@@ -6,8 +6,8 @@ import (
 	"math/rand"
 	"time"
 
-	"github.com/jedib0t/go-pretty/v6/progress"
-	"github.com/jedib0t/go-pretty/v6/text"
+	"github.com/SilverChard/go-pretty/v6/progress"
+	"github.com/SilverChard/go-pretty/v6/text"
 )
 
 var (

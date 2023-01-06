@@ -1,6 +1,6 @@
-module github.com/jedib0t/go-pretty/v6
+module github.com/SilverChard/go-pretty/v6
 
-go 1.16
+go 1.19
 
 require (
 	github.com/mattn/go-runewidth v0.0.13
