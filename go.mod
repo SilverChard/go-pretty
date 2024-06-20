@@ -1,4 +1,4 @@
-module github.com/SilverChard/go-pretty/v6
+module github.com/silver-chard/go-pretty/v6
 
 go 1.19
 
