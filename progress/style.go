@@ -3,7 +3,7 @@ package progress
 import (
 	"time"
 
-	"github.com/SilverChard/go-pretty/v6/text"
+	"github.com/silver-chard/go-pretty/v6/text"
 )
 
 // Style declares how to render the Progress/Trackers.

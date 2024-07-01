@@ -5,8 +5,9 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/SilverChard/go-pretty/v6/table"
 	"github.com/pkg/profile"
+
+	"github.com/silver-chard/go-pretty/v6/table"
 )
 
 var (

@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/SilverChard/go-pretty/v6/text"
+	"github.com/silver-chard/go-pretty/v6/text"
 )
 
 // Render renders the Progress tracker and handles all existing trackers and

@@ -6,8 +6,9 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/SilverChard/go-pretty/v6/text"
 	"github.com/stretchr/testify/assert"
+
+	"github.com/silver-chard/go-pretty/v6/text"
 )
 
 func compareOutput(t *testing.T, out string, expectedOut string) {

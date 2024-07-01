@@ -4,7 +4,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/SilverChard/go-pretty/v6/text"
+	"github.com/silver-chard/go-pretty/v6/text"
 )
 
 // IndeterminateIndicator defines the structure for the indicator to indicate

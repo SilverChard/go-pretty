@@ -5,8 +5,8 @@ import (
 	"os"
 	"strings"
 
-	"github.com/SilverChard/go-pretty/v6/table"
-	"github.com/SilverChard/go-pretty/v6/text"
+	"github.com/silver-chard/go-pretty/v6/table"
+	"github.com/silver-chard/go-pretty/v6/text"
 )
 
 var (

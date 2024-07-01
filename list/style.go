@@ -1,6 +1,6 @@
 package list
 
-import "github.com/SilverChard/go-pretty/v6/text"
+import "github.com/silver-chard/go-pretty/v6/text"
 
 // Style declares how to render the List (items).
 type Style struct {

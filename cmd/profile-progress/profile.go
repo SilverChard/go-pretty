@@ -7,8 +7,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/SilverChard/go-pretty/v6/progress"
 	"github.com/pkg/profile"
+
+	"github.com/silver-chard/go-pretty/v6/progress"
 )
 
 var (

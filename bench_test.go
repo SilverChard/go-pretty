@@ -5,9 +5,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/SilverChard/go-pretty/v6/list"
-	"github.com/SilverChard/go-pretty/v6/progress"
-	"github.com/SilverChard/go-pretty/v6/table"
+	"github.com/silver-chard/go-pretty/v6/list"
+	"github.com/silver-chard/go-pretty/v6/progress"
+	"github.com/silver-chard/go-pretty/v6/table"
 )
 
 var (

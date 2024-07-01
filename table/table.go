@@ -5,7 +5,7 @@ import (
 	"io"
 	"strings"
 
-	"github.com/SilverChard/go-pretty/v6/text"
+	"github.com/silver-chard/go-pretty/v6/text"
 )
 
 // Row defines a single row in the Table.
@@ -166,11 +166,12 @@ func (t *Table) AppendRows(rows []Row, config ...RowConfig) {
 //
 // ******************************************************************************
 // Please note the following caveats:
-// 1. SetPageSize(): this may end up creating consecutive separator rows near
-//    the end of a page or at the beginning of a page
-// 2. SortBy(): since SortBy could inherently alter the ordering of rows, the
-//    separators may not appear after the row it was originally intended to
-//    follow
+//  1. SetPageSize(): this may end up creating consecutive separator rows near
+//     the end of a page or at the beginning of a page
+//  2. SortBy(): since SortBy could inherently alter the ordering of rows, the
+//     separators may not appear after the row it was originally intended to
+//     follow
+//
 // ******************************************************************************
 func (t *Table) AppendSeparator() {
 	if t.separators == nil {

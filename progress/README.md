@@ -1,5 +1,5 @@
 # Progress
-[![Go Reference](https://pkg.go.dev/badge/github.com/SilverChard/go-pretty/v6/progress.svg)](https://pkg.go.dev/github.com/SilverChard/go-pretty/v6/progress)
+[![Go Reference](https://pkg.go.dev/badge/github.com/silver-chard/go-pretty/v6/progress.svg)](https://pkg.go.dev/github.com/silver-chard/go-pretty/v6/progress)
 
 Track the Progress of one or more Tasks (like downloading multiple files in
 parallel).

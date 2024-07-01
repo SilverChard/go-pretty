@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/SilverChard/go-pretty/v6/list"
-	"github.com/SilverChard/go-pretty/v6/text"
+	"github.com/silver-chard/go-pretty/v6/list"
+	"github.com/silver-chard/go-pretty/v6/text"
 )
 
 func demoPrint(title string, content string, prefix string) {
